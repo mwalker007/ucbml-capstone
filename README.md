@@ -4,6 +4,7 @@
 
 #### Executive summary
 Given Spotify's collection of metadata about artists and their tracks, is it possible to predict which of the artists songs will be among their top 5 most popular?
+A Decision Tree model could be helpful in predicting Top5 tracks since it did the best job overall of predicting the Top5 tracks while reducing False Positives and False Negatives. Further experimentation with inclusion/exclusion of track meta data and class balancing could lead to improved model performance.
 
 #### Rationale
 Bands have limited resources available to promote their new material so identifying which new songs are most likely to resonate with their fans allows them to focus
@@ -26,7 +27,7 @@ While I do expect some metrics for the songs to be more indicative of others in 
 Bands have limited resources available to promote their new material so identifying which new songs are most likely to resonate with their fans allows them to focus their resources in promoting those with the best chance of success such as more plays and gaining new fans.
 
 #### Results
-The results were heavily skewed towards predicting none or only a few of the tracks would be among the top 5 regardless of artist.  The Decision Tree models had the best Precision and Recall scores. Precision is the most important metric since the goal is maximize True Positives and minimize False Positives. 
+The initial results were heavily skewed towards predicting none or only a few of the tracks would be among the top 5 regardless of artist.  After balancing the classes by removing 80% of the non-Top5 tracks, the Precision went from ~0.10 to ~0.40 for most models. The Decision Tree model had the best F1 score along with relatively high precision. The LogisticRegression model had the best Precision at 0.45 scores. Based on my analysis so far, I would use the Decision Tree model since it predicted the most correct Top5 in the Test dataset with a lessor number of False Positives as compared to the LogisticRegression model. 
 
 
 #### Outline of project
