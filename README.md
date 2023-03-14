@@ -109,7 +109,7 @@ After collecting the top 50 tracks for each of the Rock and Roll Hall of Fame me
 
 #### Outline of project
 
-- [Main Jupyter Notebook for project](module_20.cap_project.ipynb)
+- [Main Jupyter Notebook for project](module_24.cap_project.ipynb)
 - [Rock Hall of Fame Members](rockhall.members.txt)
 - [Generated Dataset for Rock Hall of Fame Members Top 50 Tracks](out.all.top50.csv)
 
