@@ -82,13 +82,13 @@ After collecting the top 50 tracks for each of the Rock and Roll Hall of Fame me
 #### Summary of Basic (default settings) Model traing
 |               Model 	| Train Time (secs) 	| Train Accuracy 	| Test Accuracy 	| Precision 	|   Recall 	| F1 Score 	|
 |--------------------:	|------------------:	|---------------:	|--------------:	|----------:	|---------:	|---------:	|
-|      Baseline Dummy 	|          0.003166 	|       0.582317 	|      0.581754 	|         0 	|        0 	|        0 	|
-| Logistic Regression 	|          0.153274 	|       0.602134 	|      0.597156 	|  0.546763 	| 0.215297 	| 0.308943 	|
-|                 KNN 	|          0.005496 	|       0.694614 	|      0.492891 	|   0.37785 	| 0.328612 	| 0.351515 	|
-|       Decision Tree 	|          0.036863 	|              1 	|      0.537915 	|  0.447592 	| 0.447592 	| 0.447592 	|
-|                 SVM 	|          0.170101 	|       0.582317 	|      0.581754 	|         0 	|        0 	|        0 	|
+|      Baseline Dummy 	|          0.002246 	|       0.582317 	|      0.581754 	|         0 	|        0 	|        0 	|
+| Logistic Regression 	|          0.137161 	|       0.596545 	|      0.580569 	|  0.494845 	| 0.135977 	| 0.213333 	|
+|                 KNN 	|          0.007771 	|       0.690041 	|      0.504739 	|  0.396825 	| 0.354108 	| 0.374251 	|
+|       Decision Tree 	|          0.045594 	|              1 	|      0.515403 	|  0.421348 	| 0.424929 	| 0.423131 	|
+|                 SVM 	|          0.177593 	|       0.582317 	|      0.581754 	|         0 	|        0 	|        0 	|
 
-* Results: The best performing basic model for this use case was the Decision Tree which had the which had relatively high Precision, Recall, and F1 score.
+* Results: The best performing basic model for this use case was the Decision Tree which had the which had relatively high Precision, and the best Recall, and F1 score.
 
 #### Summary of Advanced (Hypertuned) Model traing
 |               Model 	| Mean Fit time (secs) 	| Accuracy 	| Precision 	|   Recall 	| F1 Score 	|                                    Best Model Parameters 	|
@@ -98,8 +98,14 @@ After collecting the top 50 tracks for each of the Rock and Roll Hall of Fame me
 | Decision Tree       	| 0.018739             	| 0.578199 	| 0.363636  	| 0.011331 	| 0.021978 	| DecisionTreeClassifier(criterion='entropy', max_depth=3) 	|
 | SVM                 	| 18.532704            	| 0.581754 	| 0         	| 0        	| 0        	| SVC(gamma=0.1, kernel='linear')                          	|
 
-* Results:The KNN model had the best Recall and F1 score - Based on the results so far, I would use this model to answer the question of which tracks are most likely to be in the Top5 since it's highest F1 score balances Precision and Recall best. 
+* Results:In the above trial, The KNN model had the best Recall and F1 score - Based on the results so far, I would use this model to answer the question of which tracks are most likely to be in the Top5 since it's highest F1 score balances Precision and Recall best. This was typically the case when I ran the training, but wasn't always consistent. For example the below output is for the most recent trial:
 
+|               Model 	| Mean Fit time (secs) 	| Accuracy 	| Precision 	|   Recall 	| F1 Score 	|                                    Best Model Parameters 	|
+|--------------------:	|---------------------:	|---------:	|----------:	|---------:	|---------:	|---------------------------------------------------------:	|
+| Logistic Regression 	|              0.03456 	| 0.582938 	|   0.50495 	| 0.144476 	|  0.22467 	|   LogisticRegression(max_iter=10000, solver='newton-cg') 	|
+|                 KNN 	|             0.002022 	|   0.5391 	|  0.359375 	| 0.130312 	| 0.191268 	| KNeighborsClassifier(metric='euclidean', n_neighbors=24) 	|
+|       Decision Tree 	|             0.020842 	| 0.562796 	|  0.391892 	| 0.082153 	| 0.135831 	|                      DecisionTreeClassifier(max_depth=5) 	|
+|                 SVM 	|            28.959773 	|  0.56872 	|  0.351351 	| 0.036827 	| 0.066667 	|                          SVC(gamma=0.1, kernel='linear') 	|
 
 #### Outline of project
 
